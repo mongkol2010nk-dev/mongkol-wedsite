@@ -1,131 +1,411 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>รถเช่าพร้อมคนขับทั่วไทย 24 ชั่วโมง</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="font-sans bg-gray-50 text-gray-800">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>รถเช่าพร้อมคนขับ 24 ชั่วโมง | บริการทั่วไทย ราคาชัดเจน ปลอดภัย ตรงเวลา</title>
+  <meta name="description" content="บริการรถเช่าพร้อมคนขับ 24 ชั่วโมง ทั่วไทย รถเก๋ง SUV และตู้ VIP คนขับมืออาชีพ ราคาชัดเจน จองง่าย ออกบิลได้ ติดต่อด่วน โทร/ไลน์/วอทส์แอป" />
+  <meta name="keywords" content="รถเช่าพร้อมคนขับ, เช่ารถพร้อมคนขับ, รถตู้พร้อมคนขับ, รถเก๋งพร้อมคนขับ, เช่ารถรายวันพร้อมคนขับ, รถรับส่งสนามบิน" />
+  <meta property="og:title" content="รถเช่าพร้อมคนขับ 24 ชั่วโมง | บริการทั่วไทย" />
+  <meta property="og:description" content="จองรถพร้อมคนขับมืออาชีพ 24 ชั่วโมง ราคาชัดเจน ปลอดภัย ตรงเวลา" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop" />
+  <meta property="og:url" content="https://example.com" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚘</text></svg>">
+  <style>
+    :root{
+      --bg:#0b1020; --card:#111631; --muted:#98a2b3; --brand:#27c3a8; --brand-2:#5b8dff; --text:#e6e8ef; --accent:#e9f7f3;
+      --shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans Thai", "Noto Sans", sans-serif; color:var(--text); background:linear-gradient(180deg,#0b1020, #0f1733 40%, #0b1020);}    
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto; display:block}
+    .container{width:min(1200px, 92%); margin-inline:auto}
+    .btn{display:inline-flex; align-items:center; gap:.6rem; padding:.9rem 1.1rem; border-radius:14px; font-weight:700; letter-spacing:.2px; border:1px solid transparent; box-shadow:var(--shadow); cursor:pointer; backdrop-filter:saturate(140%) blur(6px)}
+    .btn-primary{background:linear-gradient(90deg,var(--brand), var(--brand-2)); color:#03121a}
+    .btn-ghost{background:rgba(255,255,255,.06); color:var(--text); border-color:rgba(255,255,255,.1)}
+    .badge{display:inline-flex; gap:.4rem; align-items:center; padding:.35rem .6rem; border-radius:999px; font-size:.85rem; background:rgba(39,195,168,.15); color:#b7fff1; border:1px solid rgba(39,195,168,.4)}
+    header{position:sticky; top:0; z-index:50; backdrop-filter: blur(10px) saturate(140%); background:rgba(11,16,32,.65); border-bottom:1px solid rgba(255,255,255,.08)}
+    nav{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.7rem 0}
+    .nav-left{display:flex; align-items:center; gap:1rem}
+    .logo{display:flex; align-items:center; gap:.7rem; font-weight:900}
+    .logo-mark{width:36px; height:36px; display:grid; place-items:center; border-radius:12px; background:linear-gradient(135deg,var(--brand) 0%, var(--brand-2) 100%); color:#071014; box-shadow:var(--shadow)}
+    .nav-links{display:none; gap:1rem}
+    .nav-links a{opacity:.9}
+    .nav-cta{display:flex; gap:.6rem; align-items:center}
+    @media(min-width:860px){ .nav-links{display:flex} }/* Hero */
+.hero{position:relative; isolation:isolate; padding:72px 0 40px;}
+.hero::before{content:""; position:absolute; inset:0; z-index:-1; background:
+  radial-gradient(800px 400px at 10% 10%, rgba(39,195,168,.12), transparent 60%),
+  radial-gradient(700px 300px at 90% 15%, rgba(91,141,255,.12), transparent 60%),
+  url('https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; filter: saturate(95%); opacity:.22}
+.grid{display:grid; gap:1.2rem}
+@media(min-width:980px){ .grid{grid-template-columns: 1.1fr .9fr; align-items:center} }
+.hero h1{font-size:clamp(2rem, 4vw + 1rem, 3.6rem); line-height:1.08; margin:0 0 .6rem; letter-spacing:.2px}
+.sub{color:var(--muted); font-size:1.05rem}
+.hero-card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.1); padding:1rem; border-radius:18px}
+.kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:.7rem; margin-top:1rem}
+.kpi{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); padding:.9rem; border-radius:14px; text-align:center}
+.kpi b{font-size:1.2rem}
 
-  <!-- Navbar -->
-  <header class="bg-green-600 text-white py-4 shadow">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6">
-      <h1 class="text-xl font-bold">🚖 รถเช่าพร้อมคนขับ</h1>
-      <nav class="space-x-4">
-        <a href="#services" class="hover:underline">บริการ</a>
-        <a href="#profile" class="hover:underline">โปรไฟล์</a>
-        <a href="#booking" class="hover:underline">จองรถ</a>
-        <a href="#reviews" class="hover:underline">รีวิว</a>
-        <a href="#contact" class="hover:underline">ติดต่อ</a>
+/* Sections */
+section{padding:64px 0}
+.section-title{font-size:1.8rem; margin:0 0 .6rem}
+.section-sub{color:var(--muted); margin:0 0 1.2rem}
+.cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:1rem}
+.card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:1rem; box-shadow:var(--shadow)}
+.card h3{margin:.2rem 0 .2rem}
+.chip{display:inline-flex; align-items:center; gap:.4rem; font-size:.85rem; padding:.3rem .55rem; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1)}
+
+/* Fleet */
+.fleet{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem}
+.fleet .item{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:18px; overflow:hidden}
+.fleet .meta{padding:1rem}
+.price{font-weight:800; font-size:1.2rem}
+
+/* Pricing tables */
+.pricing{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem}
+.plan{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.12); border-radius:18px; padding:1.2rem}
+.plan .head{display:flex; align-items:center; justify-content:space-between}
+.plan ul{margin:.6rem 0 0; padding:0; list-style:none}
+.plan li{display:flex; gap:.5rem; align-items:flex-start; padding:.35rem 0}
+
+/* Booking */
+.form{display:grid; grid-template-columns:1fr; gap:.9rem}
+.field{display:grid}
+.field label{font-size:.9rem; color:#d5d9e4; margin-bottom:.35rem}
+.field input,.field select,.field textarea{background:#0f1733; border:1px solid rgba(255,255,255,.12); color:var(--text); border-radius:12px; padding:.8rem; outline:none}
+.field small{color:var(--muted)}
+@media(min-width:860px){ .form{grid-template-columns: repeat(2, minmax(0,1fr))} .form .full{grid-column:1/-1} }
+
+/* FAQ */
+.faq .q{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:1rem; cursor:pointer}
+.faq .a{display:none; padding:0 1rem .6rem; color:var(--muted)}
+
+/* Footer */
+footer{background:#080b18; border-top:1px solid rgba(255,255,255,.08)}
+.cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem}
+
+/* Floating CTA */
+.floating{position:fixed; right:1rem; bottom:1rem; display:flex; gap:.6rem; z-index:60}
+.floating .btn{padding:.7rem .9rem}
+
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"รถเช่าพร้อมคนขับ 24 ชั่วโมง",
+    "image":"https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop",
+    "telephone":"+66-80-000-0000",
+    "areaServed":"Thailand",
+    "priceRange":"฿฿",
+    "address":{"@type":"PostalAddress","addressCountry":"TH"},
+    "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}],
+    "sameAs":["https://line.me","https://wa.me"],
+    "url":"https://example.com",
+    "makesOffer":[{"@type":"Offer","name":"รถเก๋งพร้อมคนขับ","price":"1800","priceCurrency":"THB"},{"@type":"Offer","name":"SUV พร้อมคนขับ","price":"2400","priceCurrency":"THB"},{"@type":"Offer","name":"รถตู้ VIP พร้อมคนขับ","price":"2800","priceCurrency":"THB"}]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="nav-left">
+          <a class="logo" href="#home" aria-label="หน้าแรก">
+            <span class="logo-mark">🚗</span>
+            <span>Car with Driver 24/7</span>
+          </a>
+          <span class="badge">⏱️ เปิดตลอด 24 ชั่วโมง</span>
+        </div>
+        <div class="nav-links" aria-label="เมนูหลัก">
+          <a href="#services">บริการ</a>
+          <a href="#fleet">ประเภทรถ</a>
+          <a href="#pricing">ราคา</a>
+          <a href="#booking">จองรถ</a>
+          <a href="#reviews">รีวิว</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">ติดต่อ</a>
+        </div>
+        <div class="nav-cta">
+          <a class="btn btn-ghost" href="tel:+66800000000">📞 โทรเลย</a>
+          <a class="btn btn-primary" href="#booking">จองภายใน 1 นาที</a>
+        </div>
       </nav>
     </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="text-center py-16 bg-gradient-to-r from-green-500 to-green-700 text-white">
-    <h2 class="text-4xl font-bold mb-4">รถเช่าพร้อมคนขับทั่วไทย 24 ชั่วโมง</h2>
-    <p class="text-lg">ปลอดภัย ✅ สะดวก ✅ ตรงเวลา ✅ ราคาตรงไปตรงมา</p>
-    <p class="mt-4 text-xl">โทรเลย 📞 063-638-5818 | WeChat: +66870117047</p>
-  </section>
-
-  <!-- จุดเด่น -->
-  <section id="services" class="py-16 bg-white">
-    <div class="max-w-5xl mx-auto text-center px-6">
-      <h2 class="text-3xl font-bold mb-8">✨ จุดเด่นบริการของเรา</h2>
-      <ul class="space-y-4 text-lg">
-        <li>✅ คนขับมืออาชีพ แต่งกายสุภาพ</li>
-        <li>✅ รถใหม่สะอาด ตรวจสอบได้ก่อนใช้งาน</li>
-        <li>✅ รองรับทุกการเดินทาง: ท่องเที่ยว, ธุระส่วนตัว, งานสำคัญ</li>
-        <li>✅ ให้บริการทั่วไทย ทุกจังหวัด</li>
-        <li>✅ รับส่งพัสดุ และงานด่วนพิเศษ</li>
-        <li>✅ บริการสำหรับบุคคล องค์กร และบริษัท</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- โปรไฟล์ -->
-  <section id="profile" class="py-16 bg-gray-100">
-    <div class="max-w-5xl mx-auto text-center px-6">
-      <h2 class="text-3xl font-bold mb-6">🌏 โปรไฟล์ : เช่าเหมาพร้อมคนขับทั่วไทย</h2>
-      <p class="text-lg mb-8">
-        เราคือทีมงานมืออาชีพด้านบริการรถเช่าพร้อมคนขับทั่วไทย  
-        ไม่ว่าจะรายวัน รายเดือน หรือเช่าเหมาไปต่างจังหวัด  
-        เราพร้อมให้บริการด้วยความปลอดภัยและสะดวกสบายสูงสุด
-      </p>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-xl shadow p-6">
-          <h3 class="font-bold text-xl mb-2">🚖 รายวัน</h3>
-          <p>เหมาะกับการท่องเที่ยว ประชุม งานอีเวนต์  
-             เลือกเส้นทางได้ตามสะดวก</p>
+  </header>  <!-- Hero -->  <section id="home" class="hero">
+    <div class="container grid">
+      <div>
+        <h1>รถเช่าพร้อมคนขับ 24 ชั่วโมง<br/>บริการทั่วไทย ราคาชัดเจน ปลอดภัยที่สุด</h1>
+        <p class="sub">รถเก๋ง | SUV | รถตู้ VIP นักขับมืออาชีพ ผ่านการอบรม มารยาทดี คุยรู้เรื่อง ตรงเวลา ทุกคันประกันชั้นหนึ่ง พร้อมรับ-ส่งสนามบิน ท่องเที่ยว ทำธุระ งานประชุม ออกบิลใบเสร็จ/ใบกำกับภาษีได้</p>
+        <div style="display:flex; gap:.6rem; margin-top:1rem; flex-wrap:wrap">
+          <a class="btn btn-primary" href="#pricing">ดูราคาแพ็กเกจ</a>
+          <a class="btn btn-ghost" href="#fleet">เลือกรถที่ใช่</a>
         </div>
-        <div class="bg-white rounded-xl shadow p-6">
-          <h3 class="font-bold text-xl mb-2">🚌 เหมาเป็นทริป</h3>
-          <p>เดินทางต่างจังหวัด ทริปครอบครัว/เพื่อน  
-             คุ้มค่าและสะดวกสบาย</p>
+        <div class="kpis">
+          <div class="kpi"><b>4.9★</b><div class="sub">ความพึงพอใจ</div></div>
+          <div class="kpi"><b>10,000+</b><div class="sub">ทริป/ปี</div></div>
+          <div class="kpi"><b>100%</b><div class="sub">ตรงเวลา</div></div>
+          <div class="kpi"><b>ทั่วไทย</b><div class="sub">พื้นที่ให้บริการ</div></div>
         </div>
-        <div class="bg-white rounded-xl shadow p-6">
-          <h3 class="font-bold text-xl mb-2">📆 รายเดือน</h3>
-          <p>เหมาะกับบริษัท หน่วยงาน หรือผู้บริหาร  
-             ต้องการรถประจำพร้อมคนขับ</p>
+      </div>
+      <div class="hero-card">
+        <div class="card">
+          <h3>จองด่วนภายใน 1 นาที</h3>
+          <p class="sub">กรอกข้อมูลสั้น ๆ แล้วทีมงานติดต่อกลับทันที</p>
+          <form id="quickForm" class="form" onsubmit="return handleQuick(event)">
+            <div class="field"><label>ชื่อ</label><input required name="name" placeholder="ชื่อ-นามสกุล" /></div>
+            <div class="field"><label>โทรศัพท์</label><input required name="phone" placeholder="080-000-0000" pattern="[0-9+\- ]{8,}"/></div>
+            <div class="field"><label>วันเวลาใช้งาน</label><input required type="datetime-local" name="date"/></div>
+            <div class="field"><label>เส้นทาง/จุดหมาย</label><input name="route" placeholder="เช่น สุวรรณภูมิ → พัทยา"/></div>
+            <div class="field full"><label>หมายเหตุ</label><textarea name="note" rows="2" placeholder="จำนวนผู้โดยสาร/กระเป๋า/เก้าอี้เด็ก ฯลฯ"></textarea></div>
+            <div class="full" style="display:flex; gap:.6rem; flex-wrap:wrap">
+              <button class="btn btn-primary" type="submit">ส่งคำขอจอง</button>
+              <a class="btn btn-ghost" href="#booking">กรอกแบบละเอียด</a>
+            </div>
+            <small>หรือแชททันที: <a href="https://wa.me/66800000000" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://line.me/ti/p/~yourlineid" target="_blank" rel="noopener">LINE</a></small>
+          </form>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- วิธีการจอง -->
-  <section id="booking" class="py-16 bg-white">
-    <div class="max-w-5xl mx-auto text-center px-6">
-      <h2 class="text-3xl font-bold mb-8">📝 วิธีการจอง</h2>
-      <form class="space-y-4 max-w-2xl mx-auto">
-        <input type="text" placeholder="ชื่อผู้จอง" class="w-full border p-3 rounded">
-        <input type="text" placeholder="เบอร์ติดต่อ" class="w-full border p-3 rounded">
-        <input type="text" placeholder="จุดรับ" class="w-full border p-3 rounded">
-        <input type="text" placeholder="จุดส่ง" class="w-full border p-3 rounded">
-        <select class="w-full border p-3 rounded">
-          <option>เลือกประเภทรถ</option>
-          <option>รถเก๋ง</option>
-          <option>SUV</option>
-          <option>รถตู้</option>
-        </select>
-        <input type="date" class="w-full border p-3 rounded">
-        <input type="time" class="w-full border p-3 rounded">
-        <button class="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700">
-          ✅ ยืนยันการจอง
-        </button>
+  </section>  <!-- Services -->  <section id="services">
+    <div class="container">
+      <h2 class="section-title">บริการของเรา</h2>
+      <p class="section-sub">เลือกบริการที่เหมาะกับการเดินทางของคุณ ทั้งแบบรายชั่วโมง รายวัน หรือเหมาไป-กลับ</p>
+      <div class="cards">
+        <div class="card">
+          <div class="chip">✈️ สนามบิน</div>
+          <h3>รับ–ส่งสนามบิน</h3>
+          <p class="sub">สุวรรณภูมิ | ดอนเมือง | ภูเก็ต | เชียงใหม่ | อู่ตะเภา พร้อมป้ายชื่อและติดตามเที่ยวบิน</p>
+        </div>
+        <div class="card">
+          <div class="chip">🧭 ท่องเที่ยว</div>
+          <h3>เที่ยวเต็มวัน/หลายวัน</h3>
+          <p class="sub">เที่ยวทะเล ภูเขา วัด คาเฟ่ สวนสนุก วางแพลนเส้นทางให้และแนะนำจุดแวะ</p>
+        </div>
+        <div class="card">
+          <div class="chip">🏢 ธุรกิจ</div>
+          <h3>งานประชุม/ดูงาน</h3>
+          <p class="sub">รถภาพลักษณ์ดี มีน้ำดื่ม/ทิชชู่ พร้อมคนขับสุภาพ ตรงเวลา</p>
+        </div>
+        <div class="card">
+          <div class="chip">🧒 ครอบครัว</div>
+          <h3>รับ–ส่งรายชั่วโมง</h3>
+          <p class="sub">ทำธุระในเมืองหลายจุด รอรับ-รอส่งได้ เพิ่มคาร์ซีทสำหรับเด็กตามต้องการ</p>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- Fleet -->  <section id="fleet">
+    <div class="container">
+      <h2 class="section-title">ประเภทรถให้เลือก</h2>
+      <p class="section-sub">รถใหม่ สะอาด ตรวจสภาพสม่ำเสมอ ทุกคันประกันชั้นหนึ่ง</p>
+      <div class="fleet">
+        <article class="item">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1549924231-f129b911e442?q=80&w=1200&auto=format&fit=crop" alt="รถเก๋งพร้อมคนขับ"/>
+          <div class="meta">
+            <h3>รถเก๋ง (Sedan)</h3>
+            <p class="sub">เหมาะ 1–3 ที่นั่ง กระเป๋าขนาดกลาง 2 ใบ</p>
+            <div class="price">เริ่มต้น ฿1,800/เที่ยว • ฿2,200/วัน</div>
+          </div>
+        </article>
+        <article class="item">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop" alt="รถ SUV พร้อมคนขับ"/>
+          <div class="meta">
+            <h3>SUV</h3>
+            <p class="sub">นั่งสบาย 1–4 ที่นั่ง พื้นที่เก็บสัมภาระมากขึ้น</p>
+            <div class="price">เริ่มต้น ฿2,400/เที่ยว • ฿2,800/วัน</div>
+          </div>
+        </article>
+        <article class="item">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1659561206380-81a8c4871fd1?q=80&w=1200&auto=format&fit=crop" alt="รถตู้ VIP พร้อมคนขับ"/>
+          <div class="meta">
+            <h3>รถตู้ VIP</h3>
+            <p class="sub">เหมาะ 5–9 ที่นั่ง เบาะใหญ่ นั่งสบายสำหรับครอบครัว/คณะ</p>
+            <div class="price">เริ่มต้น ฿2,800/เที่ยว • ฿3,500/วัน</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>  <!-- Pricing -->  <section id="pricing">
+    <div class="container">
+      <h2 class="section-title">แพ็กเกจราคา</h2>
+      <p class="section-sub">ราคาอาจแตกต่างตามระยะทาง ชั่วโมงรอ รถที่เลือก และช่วงเทศกาล — สอบถามใบเสนอราคาที่แม่นยำได้เลย</p>
+      <div class="pricing">
+        <div class="plan">
+          <div class="head"><h3>รับ–ส่งในเมือง</h3><span class="chip">นิยม</span></div>
+          <p class="sub">ในเขตตัวเมือง/ชานเมือง ระยะทางรวมไม่เกิน 40 กม.</p>
+          <div class="price">เริ่ม ฿1,200–฿1,800</div>
+          <ul>
+            <li>✅ รวมค่าน้ำมันและคนขับ</li>
+            <li>✅ รอฟรี 30 นาทีแรก</li>
+            <li>✅ แถมน้ำดื่มและผ้าเย็น</li>
+          </ul>
+        </div>
+        <div class="plan">
+          <div class="head"><h3>เหมาวัน (8–10 ชม.)</h3><span class="chip">คุ้มค่า</span></div>
+          <p class="sub">ในจังหวัดเดียวกัน หรือใกล้เคียง</p>
+          <div class="price">เริ่ม ฿2,200–฿3,500</div>
+          <ul>
+            <li>✅ คนขับอยู่กับคุณทั้งวัน</li>
+            <li>✅ ปรับแผนได้ตามจริง</li>
+            <li>✅ ค่าทางด่วน/ที่จอด ชำระตามจริง</li>
+          </ul>
+        </div>
+        <div class="plan">
+          <div class="head"><h3>ต่างจังหวัด/หลายวัน</h3><span class="chip">ยืดหยุ่น</span></div>
+          <p class="sub">ทริปยาว ทะเลเหนือใต้ ออกต่างจังหวัด</p>
+          <div class="price">สอบถามใบเสนอราคา</div>
+          <ul>
+            <li>✅ รวมประกันชั้นหนึ่งทุกคัน</li>
+            <li>✅ คนขับผลัดเปลี่ยนเมื่อระยะไกล</li>
+            <li>✅ จัดที่พัก/ตารางท่องเที่ยวให้ได้</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- How it works -->  <section>
+    <div class="container">
+      <h2 class="section-title">ขั้นตอนการจองง่าย ๆ</h2>
+      <div class="cards">
+        <div class="card"><h3>1) บอกความต้องการ</h3><p class="sub">วันเวลา จุดรับ–ส่ง จำนวนผู้โดยสาร และประเภทรถ</p></div>
+        <div class="card"><h3>2) รับใบเสนอราคา</h3><p class="sub">สรุปราคาเงื่อนไขชัดเจน ไม่มีบวกเพิ่มแอบแฝง</p></div>
+        <div class="card"><h3>3) มัดจำ/ออกบิล</h3><p class="sub">โอนจอง ออกใบเสร็จ/ใบกำกับภาษีได้</p></div>
+        <div class="card"><h3>4) เดินทางสบายใจ</h3><p class="sub">ติดตามสถานะ และติดต่อได้ตลอด 24 ชม.</p></div>
+      </div>
+    </div>
+  </section>  <!-- Booking full form -->  <section id="booking">
+    <div class="container">
+      <h2 class="section-title">แบบฟอร์มจองรถ (รายละเอียด)</h2>
+      <p class="section-sub">กรอกข้อมูลให้ครบเพื่อรับราคาที่แม่นยำและยืนยันคิวรถ</p>
+      <form id="bookingForm" class="form" onsubmit="return handleBooking(event)">
+        <div class="field"><label>ชื่อ-นามสกุล*</label><input required name="name" placeholder="ชื่อผู้ติดต่อ"/></div>
+        <div class="field"><label>โทรศัพท์*</label><input required name="phone" placeholder="080-000-0000" pattern="[0-9+\- ]{8,}"/></div>
+        <div class="field"><label>อีเมล</label><input name="email" type="email" placeholder="you@email.com"/></div>
+        <div class="field"><label>ช่องทางติดต่อกลับ</label>
+          <select name="channel"><option>โทรศัพท์</option><option>LINE</option><option>WhatsApp</option><option>อีเมล</option></select>
+        </div>
+        <div class="field"><label>ประเภทรถ</label>
+          <select name="car"><option>รถเก๋ง (Sedan)</option><option>SUV</option><option>รถตู้ VIP</option><option>ยังไม่แน่ใจ แนะนำได้</option></select>
+        </div>
+        <div class="field"><label>วัน–เวลาออกเดินทาง*</label><input required type="datetime-local" name="start"/></div>
+        <div class="field"><label>สิ้นสุด (ถ้าเหมาวัน/หลายวัน)</label><input type="datetime-local" name="end"/></div>
+        <div class="field full"><label>เส้นทาง / จุดรับ–ส่ง*</label><input required name="route" placeholder="เช่น ดอนเมือง → เขาใหญ่ แวะฟาร์มโชคชัย"/></div>
+        <div class="field"><label>จำนวนผู้โดยสาร</label><input type="number" min="1" name="pax" placeholder="เช่น 4"/></div>
+        <div class="field"><label>กระเป๋าเดินทาง</label><input type="number" min="0" name="bags" placeholder="เช่น 3"/></div>
+        <div class="field"><label>ต้องการคาร์ซีทเด็ก</label>
+          <select name="carseat"><option>ไม่ต้องการ</option><option>ต้องการ 1</option><option>ต้องการ 2</option></select>
+        </div>
+        <div class="field full"><label>รายละเอียดเพิ่มเติม</label><textarea rows="3" name="note" placeholder="จุดแวะเพิ่มเติม เวลาโดยประมาณ หมายเหตุอื่น ๆ"></textarea></div>
+        <div class="full" style="display:flex; gap:.6rem; flex-wrap:wrap">
+          <button class="btn btn-primary" type="submit">ส่งคำขอใบเสนอราคา</button>
+          <button class="btn btn-ghost" type="button" onclick="downloadPDF()">ดาวน์โหลดใบคำขอ (PDF)</button>
+        </div>
+        <small>การส่งฟอร์มนี้จะเปิดแชท WhatsApp/LINE พร้อมข้อความที่กรอกไว้ คุณสามารถแก้ไขก่อนส่งได้</small>
       </form>
     </div>
-  </section>
-
-  <!-- รีวิว -->
-  <section id="reviews" class="py-16 bg-gray-100">
-    <div class="max-w-5xl mx-auto text-center px-6">
-      <h2 class="text-3xl font-bold mb-8">⭐ รีวิวจากลูกค้า</h2>
-      <p class="mb-6">ลูกค้าสามารถให้คะแนนการเดินทาง 1-5 ดาว พร้อมแสดงความคิดเห็น</p>
-      <div class="bg-white shadow rounded-xl p-6">
-        <p>⭐⭐⭐⭐⭐ "เดินทางสบายมาก คนขับสุภาพ รถสะอาดเหมือนใหม่  
-        จองง่าย ราคาไม่แพง ตรงเวลามากครับ" – คุณสมชาย</p>
+  </section>  <!-- Reviews -->  <section id="reviews">
+    <div class="container">
+      <h2 class="section-title">เสียงจากผู้ใช้จริง</h2>
+      <div class="cards">
+        <div class="card"><p>“รถสะอาด คนขับสุภาพมาก ขับปลอดภัย พาแวะคาเฟ่สวย ๆ ตามทาง ประทับใจค่ะ”</p><p class="sub">— คุณแป้ง • ทริปเขาใหญ่</p></div>
+        <div class="card"><p>“นัดเวลาตี 4 ไปรับที่คอนโด ตรงเวลามาก ไม่มีพลาด เที่ยวบินเช้าแบบสบายใจ”</p><p class="sub">— คุณเจ • สนามบินสุวรรณภูมิ</p></div>
+        <div class="card"><p>“คุ้มค่า บริการดี ใบกำกับภาษีครบถ้วน ใช้ออกงานลูกค้าได้อย่างมืออาชีพ”</p><p class="sub">— คุณมีน • ทริปทำงาน</p></div>
       </div>
     </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-16 bg-green-600 text-white">
-    <div class="max-w-5xl mx-auto text-center px-6">
-      <h2 class="text-3xl font-bold mb-6">📞 ติดต่อเรา</h2>
-      <p class="mb-2">โทร: 063-638-5818</p>
-      <p class="mb-2">WeChat: +66870117047</p>
-      <p class="mb-2">Email: mongkol2010mk@gmail.com</p>
-      <p class="mb-2">Facebook: <a href="https://www.facebook.com/share/1757Kpppip/" class="underline">คลิกที่นี่</a></p>
-      <p class="mb-2">Instagram: <a href="https://www.instagram.com/mongkol2010?igsh=amxlZzNqamc1Z204" class="underline">@mongkol2010</a></p>
-      <p class="mt-6 text-lg">เราพร้อมดูแลการเดินทางของทุกท่าน 24 ชั่วโมงทั่วไทย  
-      ให้การเดินทางของคุณสะดวกสบาย ปลอดภัย และเต็มไปด้วยความสุข ✨</p>
+  </section>  <!-- FAQ -->  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">คำถามที่พบบ่อย</h2>
+      <div class="faq">
+        <div class="q" onclick="toggleFaq(this)"><b>ราคานี้รวมอะไรบ้าง?</b><div class="a">โดยทั่วไปจะรวมคนขับและค่าน้ำมันตามแพ็กเกจ กรณีมีค่าทางด่วน/ที่จอด/บัตรผ่านทาง จะชำระตามจริง</div></div>
+        <div class="q" onclick="toggleFaq(this)"><b>ชำระเงินอย่างไร?</b><div class="a">โอนผ่านบัญชีธนาคาร/พร้อมเพย์ ออกใบเสร็จ/ใบกำกับภาษีได้ บริษัท/หน่วยงานทำ PO ได้</div></div>
+        <div class="q" onclick="toggleFaq(this)"><b>ยกเลิกหรือเปลี่ยนแปลงได้ไหม?</b><div class="a">แจ้งล่วงหน้าอย่างน้อย 24 ชั่วโมงเพื่อเลื่อนหรือยกเลิก เงื่อนไขอาจต่างตามช่วงเทศกาล</div></div>
+        <div class="q" onclick="toggleFaq(this)"><b>มีประกันภัยหรือไม่?</b><div class="a">ทุกคันมีประกันชั้นหนึ่ง และตรวจสภาพก่อนรับงานทุกครั้ง</div></div>
+      </div>
     </div>
-  </section>
+  </section>  <!-- Contact & Map -->  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">ติดต่อเรา</h2>
+      <div class="cols">
+        <div class="card">
+          <h3>ข้อมูลติดต่อ</h3>
+          <p class="sub">โทร: <a href="tel:+66800000000">080-000-0000</a><br/>LINE: <a href="https://line.me/ti/p/~yourlineid" target="_blank" rel="noopener">@yourlineid</a><br/>WhatsApp: <a href="https://wa.me/66800000000" target="_blank" rel="noopener">+66 80 000 0000</a><br/>อีเมล: <a href="mailto:booking@example.com">booking@example.com</a></p>
+          <p class="sub">เวลาทำการ: ให้บริการ 24 ชั่วโมง ทุกวัน</p>
+          <div style="display:flex; gap:.6rem; flex-wrap:wrap">
+            <a class="btn btn-primary" href="https://wa.me/66800000000" target="_blank" rel="noopener">คุยผ่าน WhatsApp</a>
+            <a class="btn btn-ghost" href="https://line.me/ti/p/~yourlineid" target="_blank" rel="noopener">ทัก LINE</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>พื้นที่ให้บริการ</h3>
+          <p class="sub">กรุงเทพฯ ปริมณฑล และทั่วประเทศไทย (มีทีมงานเครือข่ายในจังหวัดหลัก)</p>
+          <iframe title="แผนที่" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.676066903976!2d100.492!3d13.736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z4LmA4LiE4Lij4Lih4LiV4Lij4LmM4Lie4Lij4Li1!5e0!3m2!1sth!2sth!4v1680000000000" style="border:0; width:100%; height:300px; border-radius:14px"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>  <footer>
+    <div class="container" style="padding:28px 0; display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between">
+      <div class="logo"><span class="logo-mark">🚗</span> <span>Car with Driver 24/7</span></div>
+      <div class="sub">© <span id="year"></span> รถเช่าพร้อมคนขับ 24 ชั่วโมง • บริการทั่วไทย • สงวนลิขสิทธิ์</div>
+    </div>
+  </footer>  <!-- Floating CTA -->  <div class="floating" aria-label="ติดต่อด่วน">
+    <a class="btn btn-primary" href="https://wa.me/66800000000" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn btn-ghost" href="https://line.me/ti/p/~yourlineid" target="_blank" rel="noopener">LINE</a>
+    <a class="btn btn-ghost" href="tel:+66800000000">โทร</a>
+  </div>  <script>
+    // ปีปัจจุบันในฟุตเตอร์
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-300 py-6 text-center">
-    <p>@ 2020 5 รถเช่าพร้อมคนขับทั่วไทย จบที่เรา เบาที่สุด.. หยุดที่ทีมงาน 🙏 โลโก้สวัสดี</p>
-  </footer>
+    // Toggle FAQ
+    function toggleFaq(el){
+      const a = el.querySelector('.a');
+      a.style.display = a.style.display === 'block' ? 'none' : 'block';
+    }
 
-</body>
+    // แปลงข้อมูลฟอร์มเป็นข้อความ
+    function formToMessage(form){
+      const data = new FormData(form);
+      const lines = [];
+      for (const [k,v] of data.entries()){
+        if(v) lines.push(`${k}: ${v}`);
+      }
+      return lines.join('\n');
+    }
+
+    // ส่งแบบเร็วไป WhatsApp
+    function handleQuick(e){
+      e.preventDefault();
+      const msg = encodeURIComponent('[จองด่วน]\n' + formToMessage(e.target));
+      window.open('https://wa.me/66800000000?text=' + msg, '_blank');
+      return false;
+    }
+
+    // ส่งแบบละเอียด: เลือกช่องทาง
+    function handleBooking(e){
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const msg = encodeURIComponent('[ขอใบเสนอราคา]\n' + formToMessage(e.target));
+      const channel = (data.get('channel')||'โทรศัพท์');
+      if(channel.includes('LINE')){
+        window.open('https://line.me/ti/p/~yourlineid', '_blank');
+        alert('เราเปิด LINE ให้แล้ว โปรดวางข้อความต่อไปนี้ในการแชท:\n\n' + decodeURIComponent(msg));
+      }else{
+        window.open('https://wa.me/66800000000?text=' + msg, '_blank');
+      }
+      return false;
+    }
+
+    // สร้าง PDF ง่าย ๆ จากข้อมูลฟอร์ม (ดาวน์โหลดเป็น .txt เพื่อความง่ายโดยไม่ใช้ไลบรารี)
+    function downloadPDF(){
+      const f = document.getElementById('bookingForm');
+      const blob = new Blob(["คำขอใบเสนอราคา (รถเช่าพร้อมคนขับ)\n\n" + formToMessage(f)], {type:'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'booking_request.txt'; a.click();
+      setTimeout(()=>URL.revokeObjectURL(url), 2000);
+    }
+  </script></body>
+</html>
